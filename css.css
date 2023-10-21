@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(43,45,49);
+}
+
+form{
+    width: 60em;
+    height: 40em;
+    background-color: rgb(49,51,56);
+
+    margin: auto;
+    padding-bottom: 3%;
+    border-style: solid;
+    border-color: rgb(53, 55, 61);
+    border-bottom: 10px solid rgb(53, 55, 61);
+    border-radius: 3px;
+    box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+
+    
+    
+}
+
+#champs{
+    background-color: blueviolet;
+    margin: 15em;
+    padding: auto;
+    display: flex;
+
+}
+#champs > input{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: fit-content;
+    position: relative;
+    justify-content: center;
+}
+
+#champs2{
+    background-color: blueviolet;
+    margin: 18em;
+    padding: auto;
+    display: flex;
+
+}
+
+
+form > p{
+    margin-left:41%;
+    font-size: 200%;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color:rgba(255, 255, 255, 255);
+}
+#formcrea > p{
+    margin-left:36%;
+    font-size: 200%;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    color:rgba(255, 255, 255, 255);
+}
