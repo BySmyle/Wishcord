@@ -8,6 +8,7 @@ $i = 0;
 $mdphash = hash('sha256', $mdp .= $sel);
 while ($i < $count) {
     if ($data[$i]['login'] == $login && $data[$i]['mdp'] == $mdphash) {
+        setcookie('login', $login, time()+3600);
         header('Location: ./wishcord.php');
         break;
     } else {
