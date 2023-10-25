@@ -1,6 +1,6 @@
 <?php
-$login = 'Edouard';
-$serv = 'ds  fgh j kl';
+$login = $_COOKIE['login'];
+$serv = $_POST['serv'];
 $data = json_decode(file_get_contents('./data/mesdonnees.json'), true);
 $count = count($data);
 $i = 0;

@@ -1,7 +1,1 @@
-[
-    {
-        "login": "Edouard",
-        "mdp": "10af990602a2ecb46ea981970acd1dfc3ca0cf16a9ad86b7265e3624dba9b3c6",
-        "serv": "serveur2,test,serveur242,dsfghjkl,ds__fgh_j_kl"
-    }
-]
+[{"login":"Edouard","mdp":"10af990602a2ecb46ea981970acd1dfc3ca0cf16a9ad86b7265e3624dba9b3c6","serv":"test21,232323,sdqsfsqegfesf"},{"login":"Anthony","mdp":"193951381a6e845b9293c08c6c15f87ecfe985d6ece0da979a10439b006f8c4d","serv":",test121212"}]
