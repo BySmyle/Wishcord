@@ -24,31 +24,43 @@ function afficheserv() {
             let maDiv = document.getElementById('messerv');
             maDiv.innerHTML = "";
             console.log(mesServeurs[0]['serv']);
-            if(mesServeurs[0]['serv'] != ''){ 
+            if (mesServeurs[0]['serv'] != '') {
                 mesServeurs.forEach(function (serveurs) {
-                let mesServ = document.createElement("BUTTON");
-                mesServ.id = compteur;
-                mesServ.onclick = function() {
-                    affichechat(compteur);
-                };
-                compteur++;
-                console.log(compteur);
-                mesServ.innerText = serveurs.serv;
-                maDiv.appendChild(mesServ);
-            })}
+                    let mesServ = document.createElement("BUTTON");
+                    mesServ.id = compteur;
+                    const compteur2 = compteur;
+                    mesServ.onclick = function () {
+                        affichechat(compteur2);
+                        
+                    };
+                    compteur++;
+                    console.log(compteur2);
+                    mesServ.innerText = serveurs.serv;
+                    maDiv.appendChild(mesServ);
+                })
+            }
 
         }
     })
 }
-function affichechat(numserv){
+function affichechat(numserv) {
     $.ajax({
-        url:'./affichechat.php',
-        type:'POST',
-        data:'numserv=' + numserv,
-        success : function(code, statut){
-            console.log('Réussi2');
+        url: './affichechat.php',
+        type: 'POST',
+        data: 'numserv=' + numserv,
+        success: function (chat, statut) {
+            console.log(chat);
+            let maTA = document.getElementById('maTA');
+            let monChat = JSON.parse(chat);
+            maTA.value = '';
+            monChat.forEach(element => {
+                //    console.log(element['message']);
+                maTA.value += "-> " + element['date'] + " | " + element['pseudo'] + " : " + element['message'] + "\n";
+                ;
+            })
+
         },
-        error: function(resultat, statut, erreur){
+        error: function (resultat, statut, erreur) {
             console.log('Raté2')
         }
     })
