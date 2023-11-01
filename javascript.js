@@ -29,9 +29,10 @@ function afficheserv() {
                 let mesServ = document.createElement("BUTTON");
                 mesServ.id = compteur;
                 mesServ.onclick = function() {
-                    test(compteur);
+                    affichechat(compteur);
                 };
                 compteur++;
+                console.log(compteur);
                 mesServ.innerText = serveurs.serv;
                 maDiv.appendChild(mesServ);
             })}
@@ -39,17 +40,6 @@ function afficheserv() {
         }
     })
 }
-
-function test(i) {
-    console.log(i);
-}
-
-
-
-
-
-
-
 function affichechat(numserv){
     $.ajax({
         url:'./affichechat.php',
