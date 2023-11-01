@@ -33,11 +33,16 @@ while ($c < $count2) {
         $c++;
     }
 }
-if ($trouver == 0 && $found == true) {
+if ($trouver == 0 && $found == true && $listeServ[0] != "") {
     $data[$i]['serv'] .= "," . $serv;
     mkdir('./serveur/' . $serv);
-} else if ($trouver == 0 && $found == false) {
+} else if ($trouver == 0 && $found == false && $listeServ[0] != "") {
     $data[$i]['serv'] .= "," . $serv;
+} else if ($trouver == 0 && $found == true) {
+    $data[$i]['serv'] .= $serv;
+    mkdir('./serveur/' . $serv);
+} else if ($trouver == 0 && $found == false) {
+    $data[$i]['serv'] .= $serv;
 }
 
 file_put_contents('./data/mesdonnees.json', json_encode($data))

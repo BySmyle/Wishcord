@@ -1,23 +1,60 @@
-function creajoin(){
+function creajoin() {
     let monserv = document.getElementById('serv').value;
     $.ajax({
-        url:'./createjoin.php',
-        type:'POST',
-        data:'serv=' + monserv,
-        success : function(code, statut){
+        url: './createjoin.php',
+        type: 'POST',
+        data: 'serv=' + monserv,
+        success: function (code, statut) {
             console.log('Réussi');
         },
-        error: function(resultat, statut, erreur){
+        error: function (resultat, statut, erreur) {
             console.log('Raté')
         }
     })
 }
 
-function affichechat(serv){
+function afficheserv() {
+    $.ajax({
+        url: './afficheserv.php',
+        type: 'GET',
+        data: '',
+        success: function (serveurs, statut) {
+            let compteur = 0;
+            let mesServeurs = JSON.parse(serveurs);
+            let maDiv = document.getElementById('messerv');
+            maDiv.innerHTML = "";
+            console.log(mesServeurs[0]['serv']);
+            if(mesServeurs[0]['serv'] != ''){ 
+                mesServeurs.forEach(function (serveurs) {
+                let mesServ = document.createElement("BUTTON");
+                mesServ.id = compteur;
+                mesServ.onclick = function() {
+                    test(compteur);
+                };
+                compteur++;
+                mesServ.innerText = serveurs.serv;
+                maDiv.appendChild(mesServ);
+            })}
+
+        }
+    })
+}
+
+function test(i) {
+    console.log(i);
+}
+
+
+
+
+
+
+
+function affichechat(numserv){
     $.ajax({
         url:'./affichechat.php',
         type:'POST',
-        data:'chat=' + serv,
+        data:'numserv=' + numserv,
         success : function(code, statut){
             console.log('Réussi2');
         },
