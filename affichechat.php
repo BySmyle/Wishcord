@@ -2,6 +2,7 @@
 $login = $_COOKIE['login'];
 $numserv = $_POST['numserv'];
 $numserv - 1;
+setcookie('numserv', $numserv, time()+3600);
 $i = 0;
 $c = 0;
 $numlogin = 0;
@@ -16,7 +17,6 @@ while($i < $count){
     }
 }
 $listeServ = explode(',', $data[$i]['serv']);
-$compte = count($listeServ);
 $monserv = $listeServ[$numserv];
 $monChat = unserialize(file_get_contents('./serveur/'.$monserv.'/mesdonnees.txt'));
 echo json_encode($monChat);

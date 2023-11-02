@@ -12,7 +12,8 @@ function creajoin() {
         }
     })
 }
-
+var test;
+var monId = 0;
 function afficheserv() {
     $.ajax({
         url: './afficheserv.php',
@@ -30,9 +31,12 @@ function afficheserv() {
                     mesServ.id = compteur;
                     const compteur2 = compteur;
                     mesServ.onclick = function () {
-                        affichechat(compteur2);
+
+                        monId = mesServ.id;
                         
                     };
+                    
+                    test = setInterval(affichechat(monId), 1000);
                     compteur++;
                     console.log(compteur2);
                     mesServ.innerText = serveurs.serv;
@@ -54,7 +58,6 @@ function affichechat(numserv) {
             let monChat = JSON.parse(chat);
             maTA.value = '';
             monChat.forEach(element => {
-                //    console.log(element['message']);
                 maTA.value += "-> " + element['date'] + " | " + element['pseudo'] + " : " + element['message'] + "\n";
                 ;
             })
@@ -65,3 +68,28 @@ function affichechat(numserv) {
         }
     })
 }
+
+function envoiemessage(){
+    let monmessage = document.getElementById('message').value;
+    $.ajax({
+        url : './envoiemessage.php',
+        type : 'POST',
+        data: 'message=' + monmessage,
+        success: function (code, statut) {
+            console.log('Réussi');
+        },
+        error: function (resultat, statut, erreur) {
+            console.log('Raté')
+        }
+
+    })
+}
+
+
+
+
+
+
+
+
+setInterval(afficheserv, 2000);
