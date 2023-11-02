@@ -2,6 +2,10 @@
     display: flex;
 
 }
+textarea{
+    width: 50em;
+    height: 20em;
+}
 
 #serv{
     width: 8em;
