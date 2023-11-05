@@ -29,7 +29,6 @@ function afficheserv() {
                 mesServeurs.forEach(function (serveurs) {
                     let mesServ = document.createElement("BUTTON");
                     mesServ.id = compteur;
-                    const compteur2 = compteur;
                     mesServ.onclick = function () {
 
                         monId = mesServ.id;
