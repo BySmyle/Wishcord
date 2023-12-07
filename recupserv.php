@@ -11,11 +11,11 @@ while ($i < $count) {
         $i++;
     }
 }
-$c = 0 ;
+$c = 0;
 $listeServ = explode(",", $data[$i]['serv']);
 $count = count($listeServ);
-while($c < $count){
-echo $listeServ[$c] . '</br>';
-$c++;
+while ($c < $count) {
+    echo '<input type="button" value="' . $listeServ[$c] . '"/>' . '</br>';
+    $c++;
 }
 ?>

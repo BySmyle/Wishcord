@@ -12,6 +12,7 @@ function creajoin() {
         }
     })
 }
+<<<<<<< Updated upstream
 var test;
 var monId = 0;
 function afficheserv() {
@@ -62,12 +63,22 @@ function affichechat(numserv) {
                 ;
             })
 
+=======
+
+function afficheserv(){
+    $.ajax({
+        url:'./recupserv.php',
+        type:'POST',
+        success : function(code, statut){
+            console.log(code);
+>>>>>>> Stashed changes
         },
         error: function (resultat, statut, erreur) {
             console.log('Raté2')
         }
     })
 }
+<<<<<<< Updated upstream
 
 function envoiemessage(){
     let monmessage = document.getElementById('message').value;
@@ -93,3 +104,5 @@ function envoiemessage(){
 
 
 setInterval(afficheserv, 2000);
+=======
+>>>>>>> Stashed changes
