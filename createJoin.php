@@ -36,17 +36,9 @@ while ($c < $count2) {
 $montab = array();
 if ($trouver == 0 && $found == true && $listeServ[0] != "") {
     $data[$i]['serv'] .= "," . $serv;
-<<<<<<< Updated upstream
     mkdir('./serveur/' . $serv);
     file_put_contents('./serveur/'.$serv. '/mesdonnees.txt', serialize($montab));
 } else if ($trouver == 0 && $found == false && $listeServ[0] != "") {
-=======
-    $chemin = './serveur/'. $serv;
-    $file = './serveur/'. $serv .'/monchat.txt';
-    mkdir($chemin);
-    file_put_contents($file, '');
-} else if ($trouver == 0 && $found == false) {
->>>>>>> Stashed changes
     $data[$i]['serv'] .= "," . $serv;
 } else if ($trouver == 0 && $found == true) {
     $data[$i]['serv'] .= $serv;
